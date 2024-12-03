@@ -201,7 +201,6 @@ GameObject:
   - component: {fileID: 278490926}
   - component: {fileID: 278490929}
   - component: {fileID: 278490928}
-  - component: {fileID: 278490927}
   - component: {fileID: 278490930}
   m_Layer: 5
   m_Name: ShopMenuPopup
@@ -229,18 +228,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12.64, y: -6.819}
   m_SizeDelta: {x: 1098.313, y: 447.064}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &278490927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278490925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7f88ffb1700c2509479ce9a7c7c86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &278490928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae29371487ca887d8d1d01865d40810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
+  - {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
 --- !u!1 &534634877
 GameObject:
   m_ObjectHideFlags: 0
