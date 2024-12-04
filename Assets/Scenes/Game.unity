@@ -418,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &278490926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -491,6 +491,7 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
   - {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
+  ingredientCardPrefab: {fileID: 2014353145197213526, guid: f3f8e366acf612387aed46fe2caae0f5, type: 3}
 --- !u!1 &534634877
 GameObject:
   m_ObjectHideFlags: 0
