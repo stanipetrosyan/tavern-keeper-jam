@@ -17,6 +17,10 @@ public class IngredientCard: MonoBehaviour{
         costText.text = cost;
     }
 
+    public void SetEvent() {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
     private void Start() {
         buyButton.onClick.AddListener(() => {
             Debug.Log("Buy");

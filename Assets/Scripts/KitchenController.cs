@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class KitchenController : MonoBehaviour{
 
-    void Start() {
-        
-    }
-    
-
-
+    void Start() { }
 
 }
