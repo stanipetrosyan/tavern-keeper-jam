@@ -7,6 +7,7 @@ public class IngredientCard: MonoBehaviour{
     
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text costText;
+    [SerializeField] private Button buyButton;
 
     public void SetSprite(Sprite sprite) {
         image.sprite = sprite;
@@ -16,4 +17,9 @@ public class IngredientCard: MonoBehaviour{
         costText.text = cost;
     }
 
+    private void Start() {
+        buyButton.onClick.AddListener(() => {
+            Debug.Log("Buy");
+        });
+    }
 }
