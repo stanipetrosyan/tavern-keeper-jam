@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopMenuPopup : MonoBehaviour {
+public class ShopMenuPopup : UiPopup {
     [SerializeField] private Ingredient[] ingredients;
     [SerializeField] GameObject ingredientCardPrefab;
     private GameObject ingredientCard;
@@ -25,11 +25,11 @@ public class ShopMenuPopup : MonoBehaviour {
         }
     }
 
-    public void Open() {
+    public override void Open() {
         gameObject.SetActive(true);
     }
 
-    public void Close() {
+    public override void Close() {
         gameObject.SetActive(false);
     }
 }
