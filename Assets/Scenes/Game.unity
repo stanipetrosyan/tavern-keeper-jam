@@ -1396,6 +1396,63 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
   - {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
   ingredientCardPrefab: {fileID: 6027398587982743072, guid: ab1ce8371ada2f90d933f721dbcf4698, type: 3}
+--- !u!1 &779392787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779392790}
+  - component: {fileID: 779392789}
+  - component: {fileID: 779392788}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &779392788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779392787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9a26f934714d378287590a01db0b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &779392789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779392787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1acba111ef252d52888d26a65e36ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &779392790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779392787}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.10101253, y: 1.1689951, z: 90.07402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782851842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +2060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be144a40ad06776f9bdb48ab88931176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
 --- !u!1 &1305328612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +2887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ae908611fc4e4583709807bd76cfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  first: {fileID: 0}
 --- !u!4 &1916637546
 Transform:
   m_ObjectHideFlags: 0
@@ -2962,3 +3019,4 @@ SceneRoots:
   - {fileID: 534634879}
   - {fileID: 1147728979}
   - {fileID: 1916637546}
+  - {fileID: 779392790}
