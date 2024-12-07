@@ -2,27 +2,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager: MonoBehaviour, IGameManager {
-    private List<Card> cards;
+    private List<Ingredient> ingredients;
+    private List<Recipe> recipes;
     
-    public Card GetCard(string name) {
-        foreach (var card in cards) {
-            if (card.name == name) {
-                return card;
-            }
-        }
-
-        return null;
-    }
-
-    void AddCard(Card card) {
-        cards.Add(card);
-    }
-
     public ManagerStatus Status { get; set; }
 
     public void Startup() {
-        cards = new List<Card>();
+        ingredients = new List<Ingredient>();
+        recipes = new List<Recipe>();
         
         Status = ManagerStatus.Started;
     }
+    
+    
+    // news method to use
+    public void AddIngredient(Ingredient ingredient) {
+        throw new System.NotImplementedException();
+    }
+
+    public Ingredient[] GetIngredients() {
+        throw new System.NotImplementedException();
+    }
+
+    public void AddRecipe(Recipe recipe) {
+        throw new System.NotImplementedException();
+    }
+
+    public Recipe[] GetRecipes() {
+        throw new System.NotImplementedException();
+    }
+
 }
