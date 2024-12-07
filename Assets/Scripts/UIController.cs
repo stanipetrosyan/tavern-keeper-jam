@@ -24,6 +24,6 @@ public class UIController : MonoBehaviour {
     }
 
     public void OnOpenKitchenPopup() {
-        shopMenuPopup.Open();
+        kitchenPopup.Open();
     }
 }

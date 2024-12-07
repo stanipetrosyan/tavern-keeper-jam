@@ -8,15 +8,14 @@ public class CardsInventory: MonoBehaviour{
     private GameObject ingredientCard;
 
     public void Start() {
-        float x = 0;
-        float y = 100;
+        float x = -200;
+        float y = -200;
         
         foreach (var item in ingredients) {
             
             ingredientCard = Instantiate(ingredientCardPrefab);
             
-            ingredientCard.GetComponent<IngredientCard>().SetSprite(item.image);
-            ingredientCard.GetComponent<IngredientCard>().SetCost(item.cost.ToString());
+            ingredientCard.GetComponent<InventoryCard>().SetSprite(item.image);
             
             
             ingredientCard.transform.SetParent(transform, false);
@@ -27,5 +26,4 @@ public class CardsInventory: MonoBehaviour{
             x += 200;
         }
     }
-    
 }

@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : ScriptableObject
-{
+public class Inventory {
     private List<Card> cards;
 
     Card GetCard(string name) {
