@@ -1,8 +1,10 @@
+using TMPro;
+using UI;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 
-public class KitchenPopup : UiPopup{
-    [SerializeField] private KitchenController kitchenController;
-    
+public class TavernStatsPopup : UiPopup
+{
     public override void Open() {
         gameObject.SetActive(true);
     }

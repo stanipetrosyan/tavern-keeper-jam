@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIController : MonoBehaviour {
@@ -15,15 +13,19 @@ public class UIController : MonoBehaviour {
 
     public void OnOpenShopMenu() {
         shopMenuPopup.Open();
+        kitchenPopup.Close();
         tavernStatsPopup.Close();
     }
 
     public void OnOpenTavernStats() {
         shopMenuPopup.Close();
+        kitchenPopup.Close();
         tavernStatsPopup.Open();
     }
 
     public void OnOpenKitchenPopup() {
         kitchenPopup.Open();
+        tavernStatsPopup.Close();
+        shopMenuPopup.Close();
     }
 }
