@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Recipe", menuName = "ScriptableObjects/Recipe")]
 public class Recipe : ScriptableObject{
     public Ingredient first;
     public Ingredient second;

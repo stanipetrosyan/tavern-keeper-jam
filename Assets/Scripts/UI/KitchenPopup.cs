@@ -1,8 +1,9 @@
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class KitchenPopup : UiPopup{
-    [SerializeField] private KitchenController kitchenController;
+    [FormerlySerializedAs("kitchenController")] [SerializeField] private KitchenManager kitchenManager;
     
     public override void Open() {
         gameObject.SetActive(true);
