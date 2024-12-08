@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 545393100849261978}
-  - component: {fileID: 548626386659494389}
+  - component: {fileID: 1080427848844975657}
   m_Layer: 0
-  m_Name: EmptyCard
+  m_Name: RecipeCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5033981135539196874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &548626386659494389
+--- !u!114 &1080427848844975657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3609300807464993600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96f6ff0f227432b89217e6b51d4c3c6, type: 3}
+  m_Script: {fileID: 11500000, guid: d86e768324ee40a3acfb0d4c34b4e3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 5488837368252547853}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

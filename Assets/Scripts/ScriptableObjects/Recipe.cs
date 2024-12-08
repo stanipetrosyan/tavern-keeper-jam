@@ -8,9 +8,8 @@ public class Recipe : ScriptableObject{
     public string recipeName;
 
 
-    public Recipe Create(Ingredient first, Ingredient second) {
-        if (this.first != first && this.second != second) return null;
-        
-        return CreateInstance<Recipe>();
+    // TODO: Actually check the order too, but needed check just ingredients are correct
+    public bool Valid(Ingredient first, Ingredient second) {
+        return this.first == first && this.second == second;
     }
 }

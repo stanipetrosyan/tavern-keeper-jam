@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardsInventory: MonoBehaviour{
@@ -16,7 +15,7 @@ public class CardsInventory: MonoBehaviour{
             
             ingredientCard = Instantiate(ingredientCardPrefab);
             
-            ingredientCard.GetComponent<InventoryCard>().SetSprite(item.image);
+            ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
             
             
             ingredientCard.transform.SetParent(transform, false);

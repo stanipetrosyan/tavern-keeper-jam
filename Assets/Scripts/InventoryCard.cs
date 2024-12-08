@@ -4,9 +4,11 @@ using UnityEngine.UI;
 public class InventoryCard : MonoBehaviour{
     
     [SerializeField] private Image image;
+    private Ingredient _ingredient;
 
-    public void SetSprite(Sprite sprite) {
-        image.sprite = sprite;
+    public void SetIngredient(Ingredient ingredient) {
+        _ingredient = ingredient;
+        image.sprite = ingredient.image;
     }
     
     
@@ -14,8 +16,9 @@ public class InventoryCard : MonoBehaviour{
         Collider2D targetObject = Physics2D.OverlapBox(transform.position, new Vector2(0, 0), 0f, LayerMask.GetMask("Placeholder"));
 
         if (targetObject) {
-            Debug.Log(targetObject.name);
+            //Debug.Log(targetObject.GetComponent<EmptyCard>());
             transform.position = targetObject.transform.position;
+            targetObject.GetComponent<EmptyCard>().SetIngredient(_ingredient);
         }
     }
 }
