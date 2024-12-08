@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryManager: MonoBehaviour, IGameManager {
@@ -14,22 +15,28 @@ public class InventoryManager: MonoBehaviour, IGameManager {
         Status = ManagerStatus.Started;
     }
     
-    
-    // news method to use
     public void AddIngredient(Ingredient ingredient) {
-        throw new System.NotImplementedException();
+        ingredients.Add(ingredient);
     }
 
     public Ingredient[] GetIngredients() {
-        throw new System.NotImplementedException();
+        return ingredients.ToArray();
+    }
+
+    public Ingredient GetIngredient(string name) {
+        return ingredients.FirstOrDefault(ingredient => ingredient.name == name);
     }
 
     public void AddRecipe(Recipe recipe) {
-        throw new System.NotImplementedException();
+        recipes.Add(recipe);
     }
 
     public Recipe[] GetRecipes() {
-        throw new System.NotImplementedException();
+        return recipes.ToArray();
+    }
+
+    public Recipe GetReceipe(string name) {
+        return recipes.FirstOrDefault(receipe => receipe.name == name);
     }
 
 }
