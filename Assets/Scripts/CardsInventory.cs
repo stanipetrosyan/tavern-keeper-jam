@@ -1,3 +1,5 @@
+using Cards;
+using ScriptableObjects;
 using UnityEngine;
 
 public class CardsInventory: MonoBehaviour{

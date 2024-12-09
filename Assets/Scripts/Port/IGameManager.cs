@@ -1,5 +1,9 @@
-public interface IGameManager {
-    ManagerStatus Status {get; set;}
+using Manager;
 
-    void Startup();
+namespace Port{
+    public interface IGameManager {
+        ManagerStatus Status {get; set;}
+
+        void Startup();
+    }
 }
