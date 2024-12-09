@@ -15,10 +15,7 @@ namespace UI{
             foreach (var item in ingredients) {
             
                 ingredientCard = Instantiate(ingredientCardPrefab);
-            
-                ingredientCard.GetComponent<IngredientCard>().SetSprite(item.image);
-                ingredientCard.GetComponent<IngredientCard>().SetCost(item.cost.ToString());
-            
+                ingredientCard.GetComponent<IngredientCard>().SetIngredient(item);
             
                 ingredientCard.transform.SetParent(transform, false);
                 ingredientCard.transform.localScale = new Vector3(1, 1, 1);

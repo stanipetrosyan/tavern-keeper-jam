@@ -9,17 +9,20 @@ namespace Manager{
         public static InventoryManager Inventory { get; set; }
         public static KitchenManager Kitchen { get; set; }
         public static TavernManager Tavern { get; set; }
+        public static ShopManager Shop { get; set; }
         private List<IGameManager> startSequence;
 
         void Awake() {
             Tavern = GetComponent<TavernManager>();
             Inventory = GetComponent<InventoryManager>();
             Kitchen = GetComponent<KitchenManager>();
+            Shop = GetComponent<ShopManager>();
 
             startSequence = new List<IGameManager> {
                 Tavern,
                 Inventory,
-                Kitchen
+                Kitchen,
+                Shop
             };
 
             StartCoroutine(StartupManagers());
