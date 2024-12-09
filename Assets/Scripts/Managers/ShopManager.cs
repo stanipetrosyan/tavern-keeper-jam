@@ -14,9 +14,9 @@ public class ShopManager: MonoBehaviour, IGameManager {
     }
 
     bool BuyCard(Ingredient card) {
-        var cardCost = shopInventoryCards[card];
+        var cardCost = shopInventoryCards[card]; //Da rivedere perchè forse non ritorna null
         if (cardCost == null) return false;
-        if (!tavernManager.RemoveMoney(cardCost)) return false
+        if (!tavernManager.RemoveMoney(cardCost)) return false;
         inventoryManager.AddIngredient(card);
         return true;
     }
