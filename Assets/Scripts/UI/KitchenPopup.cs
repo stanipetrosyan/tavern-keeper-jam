@@ -36,8 +36,7 @@ namespace UI{
         
         private void GenerateInventory() {
             _ingredients = Managers.Inventory.GetIngredients();
-            float x = -200;
-            float y = -200;
+            float x = 30;
 
             foreach (var item in _ingredients) {
                 _ingredientCard = Instantiate(inventoryCardPrefab);
@@ -49,10 +48,10 @@ namespace UI{
 
                 _ingredientCard.transform.SetParent(inventory.transform, false);
                 _ingredientCard.transform.localScale = new Vector3(1, 1, 1);
-                _ingredientCard.transform.localPosition = new Vector3(x, y, 0);
+                _ingredientCard.transform.localPosition = new Vector3(x, 0, 0);
 
                 
-                x += 200;
+                x += 150;
             }
         }
         public void AddRecipeToInventory() {

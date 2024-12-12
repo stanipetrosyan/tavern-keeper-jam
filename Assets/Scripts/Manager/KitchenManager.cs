@@ -15,17 +15,18 @@ namespace Manager{
 
 
         private void Update() {
-            Recipe recipe = GenerateRecipe();
-            if (recipe) {
-                actualRecipe = recipe;
-                this.recipe.SetRecipe(recipe);
+            Recipe generatedRecipe = GenerateRecipe();
+            if (generatedRecipe) {
+                actualRecipe = generatedRecipe;
+                recipe.SetRecipe(generatedRecipe);
             }
         }
 
         private Recipe GenerateRecipe() {
             Recipe newRecipe = null;
             
-            if (!first._ingredient || second._ingredient) return null;
+            if (!first._ingredient || !second._ingredient) return null;
+            
             foreach (var item in recipes) {
                 if (item.Valid(first._ingredient, second._ingredient)) {
                     newRecipe = item;

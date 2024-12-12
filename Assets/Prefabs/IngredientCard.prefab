@@ -311,6 +311,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 545393100849261978}
     m_Modifications:
+    - target: {fileID: 4682389000246258929, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682389000246258929, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6027398587982743072, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
       propertyPath: m_Name
       value: Card
@@ -341,11 +349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127479044535545391, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6127479044535545391, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6127479044535545391, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
       propertyPath: m_LocalPosition.x
