@@ -18,7 +18,6 @@ namespace Cards{
             Collider2D targetObject = Physics2D.OverlapBox(transform.position, new Vector2(0, 0), 0f, LayerMask.GetMask("Placeholder"));
 
             if (targetObject) {
-                //Debug.Log(targetObject.GetComponent<EmptyCard>());
                 transform.position = targetObject.transform.position;
                 targetObject.GetComponent<EmptyCard>().SetIngredient(_ingredient);
             }
