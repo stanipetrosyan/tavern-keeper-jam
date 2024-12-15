@@ -6,5 +6,6 @@ namespace ScriptableObjects{
         private string cardName;
         public int cost;
         public Sprite image;
+        public int level;
     }
 }

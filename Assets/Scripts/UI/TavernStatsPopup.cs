@@ -26,6 +26,13 @@ namespace UI{
         public override void Close() {
             gameObject.SetActive(false);
         }
+
+        public void UpdateTavern() {
+            Managers.Tavern.LevelUpTavern();
+            coins.text = Managers.Tavern.GetMoney().ToString();
+            level.text = Managers.Tavern.GetTavernLevel().ToString();
+        }
+        
         
         private void OnEnable() {
             _objects = new List<GameObject>();

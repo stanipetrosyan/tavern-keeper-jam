@@ -1342,6 +1342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - {fileID: 11400000, guid: 89f2662a15ab44a878768e57b858353f, type: 2}
+  - {fileID: 11400000, guid: 375939fdf1a7068acb2de839c6a80e69, type: 2}
   first: {fileID: 1321170133}
   second: {fileID: 236821935}
   recipe: {fileID: 1625462466}
@@ -1559,9 +1560,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 779392793}
-        m_TargetAssemblyTypeName: TavernManager, Assembly-CSharp
-        m_MethodName: LevelUpTavern
+      - m_Target: {fileID: 115588951}
+        m_TargetAssemblyTypeName: UI.TavernStatsPopup, Assembly-CSharp
+        m_MethodName: UpdateTavern
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

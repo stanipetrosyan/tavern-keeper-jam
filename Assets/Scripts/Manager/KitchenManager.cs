@@ -1,3 +1,4 @@
+using System.Linq;
 using Cards;
 using Port;
 using ScriptableObjects;
@@ -23,11 +24,13 @@ namespace Manager{
         }
 
         private Recipe GenerateRecipe() {
+            int tavernLevel = Managers.Tavern.GetTavernLevel();
+            
             Recipe newRecipe = null;
             
             if (!first._ingredient || !second._ingredient) return null;
             
-            foreach (var item in recipes) {
+            foreach (var item in recipes.Where(r => r.level <= tavernLevel)) {
                 if (item.Valid(first._ingredient, second._ingredient)) {
                     newRecipe = item;
                 }

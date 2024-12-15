@@ -9,8 +9,7 @@ namespace UI{
         private Ingredient[] _ingredients;
         [SerializeField] GameObject inventoryCardPrefab;
         [SerializeField] GameObject inventory;
-        private GameObject _ingredientCard;
-        private List<GameObject> _objects;
+        private readonly List<GameObject> _objects = new();
         
         public override void Open() {
             gameObject.SetActive(true);
@@ -21,7 +20,6 @@ namespace UI{
         }
         
         private void OnEnable() {
-            _objects = new List<GameObject>();
             GenerateInventory();
         }
 
@@ -43,16 +41,12 @@ namespace UI{
             float x = 30;
 
             foreach (var item in _ingredients) {
-                _ingredientCard = Instantiate(inventoryCardPrefab, inventory.transform, false);
+                var ingredientCard = Instantiate(inventoryCardPrefab, inventory.transform, false);
+                _objects.Add(ingredientCard.gameObject);
                 
-                _objects.Add(_ingredientCard.gameObject);
-                
-                _ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
-
-
-                _ingredientCard.transform.localScale = new Vector3(1, 1, 1);
-                _ingredientCard.transform.localPosition = new Vector3(x, 0, 0);
-
+                ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
+                ingredientCard.transform.localScale = new Vector3(1, 1, 1);
+                ingredientCard.transform.localPosition = new Vector3(x, 0, 0);
                 
                 x += 150;
             }
