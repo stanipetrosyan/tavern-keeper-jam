@@ -39,8 +39,8 @@ namespace UI{
 
 
         private void GenerateIngredientsShop() {
-            float x = 0;
-            float y = 100;
+            float x = -450;
+            float y = 0;
 
             int tavernLevel = Managers.Tavern.GetTavernLevel();
         
