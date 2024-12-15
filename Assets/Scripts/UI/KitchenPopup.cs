@@ -26,14 +26,18 @@ namespace UI{
         }
 
         private void OnDisable() {
+            CleanInventory();
+        }
+
+        private void CleanInventory() {
             foreach (var item in _objects) {
                 Destroy(item);
             }
-            
+
             _objects.Clear();
         }
 
-        
+
         private void GenerateInventory() {
             _ingredients = Managers.Inventory.GetIngredients();
             float x = 30;
@@ -60,7 +64,7 @@ namespace UI{
         }
 
         public void RevertInventory() {
-            _objects.Clear();
+            CleanInventory();
             GenerateInventory();
             Clean();
         }
