@@ -22,6 +22,10 @@ namespace Manager{
             ingredients.Add(ingredient);
         }
 
+        public void RemoveIngredient(Ingredient ingredient) {
+            ingredients.Remove(ingredient);
+        }
+
         public Ingredient[] GetIngredients() {
             return ingredients.ToArray();
         }

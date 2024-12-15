@@ -39,14 +39,13 @@ namespace UI{
             float x = 30;
 
             foreach (var item in _ingredients) {
-                _ingredientCard = Instantiate(inventoryCardPrefab);
+                _ingredientCard = Instantiate(inventoryCardPrefab, inventory.transform, false);
                 
                 _objects.Add(_ingredientCard.gameObject);
                 
                 _ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
 
 
-                _ingredientCard.transform.SetParent(inventory.transform, false);
                 _ingredientCard.transform.localScale = new Vector3(1, 1, 1);
                 _ingredientCard.transform.localPosition = new Vector3(x, 0, 0);
 
@@ -54,8 +53,20 @@ namespace UI{
                 x += 150;
             }
         }
-        public void AddRecipeToInventory() {
-            Managers.Inventory.AddRecipe(Managers.Kitchen.ActualRecipe());
+
+       
+        public void Generate() {
+            Managers.Kitchen.AddRecipeToInventory();
+        }
+
+        public void RevertInventory() {
+            _objects.Clear();
+            GenerateInventory();
+            Clean();
+        }
+
+        private void Clean() {
+            Managers.Kitchen.Clean();
         }
     }
 }

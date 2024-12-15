@@ -35,9 +35,19 @@ namespace Manager{
         
             return newRecipe;
         }
-        
-        public Recipe ActualRecipe() { return actualRecipe; }
-    
+
+        public void Clean() {
+            first.Clean();
+            second.Clean();
+            recipe.Clean();
+        }
+
+        public void AddRecipeToInventory() {
+            Managers.Inventory.RemoveIngredient(first._ingredient);
+            Managers.Inventory.RemoveIngredient(second._ingredient);
+            Managers.Inventory.AddRecipe(actualRecipe);
+            Clean();
+        }
     
         public ManagerStatus Status { get; set; }
         public void Startup() {

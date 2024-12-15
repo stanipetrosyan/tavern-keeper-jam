@@ -12,5 +12,10 @@ namespace Cards{
             image.sprite = recipe.icon;
         }
 
+        public void Clean() {
+            recipe = null;
+            image.sprite = null;
+        }
+
     }
 }
