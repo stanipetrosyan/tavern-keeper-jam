@@ -1400,9 +1400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ae908611fc4e4583709807bd76cfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipes:
-  - {fileID: 11400000, guid: 89f2662a15ab44a878768e57b858353f, type: 2}
-  - {fileID: 11400000, guid: 375939fdf1a7068acb2de839c6a80e69, type: 2}
   first: {fileID: 1321170133}
   second: {fileID: 236821935}
   recipe: {fileID: 1625462466}
@@ -1432,6 +1429,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efcb374e1250ac1ca387e85f5b84635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
+  - {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
+  - {fileID: 11400000, guid: 85c85e9889ddba4af9f6488d44ccd047, type: 2}
+  - {fileID: 11400000, guid: 6c9c5e0ed7220ac5d8b7bc4acefa4490, type: 2}
+  recipes:
+  - {fileID: 11400000, guid: 89f2662a15ab44a878768e57b858353f, type: 2}
 --- !u!1 &782851842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,10 +2245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae29371487ca887d8d1d01865d40810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients:
-  - {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
-  - {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
-  - {fileID: 11400000, guid: 6c9c5e0ed7220ac5d8b7bc4acefa4490, type: 2}
   ingredientCardPrefab: {fileID: 3609300807464993600, guid: d4a4ba558cfb84390bf31a40b6ad1528, type: 3}
 --- !u!1001 &1625462464
 PrefabInstance:

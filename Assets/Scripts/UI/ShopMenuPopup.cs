@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cards;
@@ -8,8 +7,7 @@ using UnityEngine;
 
 namespace UI{
     public class ShopMenuPopup : UiPopup {
-        [SerializeField] private Ingredient[] ingredients;
-        [SerializeField] GameObject ingredientCardPrefab;
+        [SerializeField] private GameObject ingredientCardPrefab;
         private readonly List<GameObject> _objects = new();
         
         
@@ -41,10 +39,10 @@ namespace UI{
         private void GenerateIngredientsShop() {
             float x = -450;
             float y = 0;
-
-            int tavernLevel = Managers.Tavern.GetTavernLevel();
+            
+            var ingredients = Managers.Shop.GetSellableIngredients();
         
-            foreach (var item in ingredients.Where(i => i.level <= tavernLevel)) {
+            foreach (var item in ingredients) {
                 var ingredientCard = Instantiate(ingredientCardPrefab, transform, false);
                 _objects.Add(ingredientCard.gameObject);
                 

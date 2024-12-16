@@ -6,9 +6,6 @@ using UnityEngine;
 
 namespace Manager{
     public class KitchenManager : MonoBehaviour, IGameManager{
-    
-        [SerializeField] private Recipe[] recipes;
-
         [SerializeField] private EmptyCard first;
         [SerializeField] private EmptyCard second;
         [SerializeField] private RecipeCard recipe;
@@ -24,13 +21,13 @@ namespace Manager{
         }
 
         private Recipe GenerateRecipe() {
-            int tavernLevel = Managers.Tavern.GetTavernLevel();
+            var recipes = Managers.Shop.GetSellableRecipes();
             
             Recipe newRecipe = null;
             
             if (!first._ingredient || !second._ingredient) return null;
             
-            foreach (var item in recipes.Where(r => r.level <= tavernLevel)) {
+            foreach (var item in recipes) {
                 if (item.Valid(first._ingredient, second._ingredient)) {
                     newRecipe = item;
                 }
