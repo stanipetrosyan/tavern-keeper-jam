@@ -9,8 +9,7 @@ namespace UI{
         private Ingredient[] _ingredients;
         [SerializeField] GameObject inventoryCardPrefab;
         [SerializeField] GameObject inventory;
-        private GameObject _ingredientCard;
-        private List<GameObject> _objects;
+        private readonly List<GameObject> _objects = new();
         
         public override void Open() {
             gameObject.SetActive(true);
@@ -21,42 +20,51 @@ namespace UI{
         }
         
         private void OnEnable() {
-            _objects = new List<GameObject>();
             GenerateInventory();
         }
 
         private void OnDisable() {
+            CleanInventory();
+        }
+
+        private void CleanInventory() {
             foreach (var item in _objects) {
                 Destroy(item);
             }
-            
+
             _objects.Clear();
         }
 
-        
+
         private void GenerateInventory() {
             _ingredients = Managers.Inventory.GetIngredients();
-            float x = -200;
-            float y = -200;
+            float x = 30;
 
             foreach (var item in _ingredients) {
-                _ingredientCard = Instantiate(inventoryCardPrefab);
+                var ingredientCard = Instantiate(inventoryCardPrefab, inventory.transform, false);
+                _objects.Add(ingredientCard.gameObject);
                 
-                _objects.Add(_ingredientCard.gameObject);
+                ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
+                ingredientCard.transform.localScale = new Vector3(1, 1, 1);
+                ingredientCard.transform.localPosition = new Vector3(x, 0, 0);
                 
-                _ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
-
-
-                _ingredientCard.transform.SetParent(inventory.transform, false);
-                _ingredientCard.transform.localScale = new Vector3(1, 1, 1);
-                _ingredientCard.transform.localPosition = new Vector3(x, y, 0);
-
-                
-                x += 200;
+                x += 150;
             }
         }
-        public void AddRecipeToInventory() {
-            Managers.Inventory.AddRecipe(Managers.Kitchen.ActualRecipe());
+
+       
+        public void Generate() {
+            Managers.Kitchen.AddRecipeToInventory();
+        }
+
+        public void RevertInventory() {
+            CleanInventory();
+            GenerateInventory();
+            Clean();
+        }
+
+        private void Clean() {
+            Managers.Kitchen.Clean();
         }
     }
 }

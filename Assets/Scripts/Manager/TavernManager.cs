@@ -7,8 +7,6 @@ namespace Manager{
 
         public int level = 1;
         public int money = 0;
-        public TextMeshProUGUI levelText;
-        public TextMeshProUGUI moneyText;
         public ManagerStatus Status { get; set; }
 
         public void Startup() {
@@ -17,11 +15,6 @@ namespace Manager{
 
         public void LevelUpTavern() {
             level++;
-            UpdateLevelText();
-        }
-
-        public void UpdateLevelText() {
-            levelText.text = $"Level = {level}";
         }
 
         public int GetTavernLevel() {
@@ -44,11 +37,6 @@ namespace Manager{
         public int GetMoney() {
             return money;
         }
-
-        public void UpdateMoneyText() {
-            moneyText.text = $"${money}";
-        }
-    
     
     }
 }

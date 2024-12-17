@@ -7,6 +7,7 @@ namespace ScriptableObjects{
         public Ingredient second;
         public Sprite icon;
         public string recipeName;
+        public int level;
 
 
         // TODO: Actually check the order too, but needed check just ingredients are correct

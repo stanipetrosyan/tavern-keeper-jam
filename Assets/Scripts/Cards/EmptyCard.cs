@@ -11,6 +11,15 @@ namespace Cards{
             _ingredient = ingredient;
             image.sprite = ingredient.image;
         }
+
+        public bool IsEmpty() {
+            return _ingredient == null;
+        }
+
+        public void Clean() {
+            _ingredient = null;
+            image.sprite = null;
+        }
     
     }
 }

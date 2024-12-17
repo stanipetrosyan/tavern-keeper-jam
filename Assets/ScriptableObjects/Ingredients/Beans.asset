@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c46cc3223ce40bd8086bc8a5c6d03a4, type: 3}
   m_Name: Beans
   m_EditorClassIdentifier: 
-  ingredientName: Beans
   cost: 10
   image: {fileID: 21300000, guid: def64f776ef00af91b2ee0f9b3e4a0a0, type: 3}
+  level: 1

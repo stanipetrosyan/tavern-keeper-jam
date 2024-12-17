@@ -22,6 +22,10 @@ namespace Manager{
             ingredients.Add(ingredient);
         }
 
+        public void RemoveIngredient(Ingredient ingredient) {
+            ingredients.Remove(ingredient);
+        }
+
         public Ingredient[] GetIngredients() {
             return ingredients.ToArray();
         }
@@ -38,8 +42,8 @@ namespace Manager{
             return recipes.ToArray();
         }
 
-        public Recipe GetReceipe(string name) {
-            return recipes.FirstOrDefault(receipe => receipe.name == name);
+        public Recipe GetRecipe(string name) {
+            return recipes.FirstOrDefault(recipe => recipe.name == name);
         }
 
     }

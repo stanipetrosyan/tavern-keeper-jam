@@ -1,3 +1,4 @@
+using System.Linq;
 using Cards;
 using Port;
 using ScriptableObjects;
@@ -5,9 +6,6 @@ using UnityEngine;
 
 namespace Manager{
     public class KitchenManager : MonoBehaviour, IGameManager{
-    
-        [SerializeField] private Recipe[] recipes;
-
         [SerializeField] private EmptyCard first;
         [SerializeField] private EmptyCard second;
         [SerializeField] private RecipeCard recipe;
@@ -15,17 +13,20 @@ namespace Manager{
 
 
         private void Update() {
-            Recipe recipe = GenerateRecipe();
-            if (recipe) {
-                actualRecipe = recipe;
-                this.recipe.SetRecipe(recipe);
+            Recipe generatedRecipe = GenerateRecipe();
+            if (generatedRecipe) {
+                actualRecipe = generatedRecipe;
+                recipe.SetRecipe(generatedRecipe);
             }
         }
 
         private Recipe GenerateRecipe() {
+            var recipes = Managers.Shop.GetSellableRecipes();
+            
             Recipe newRecipe = null;
             
-            if (!first._ingredient || second._ingredient) return null;
+            if (!first._ingredient || !second._ingredient) return null;
+            
             foreach (var item in recipes) {
                 if (item.Valid(first._ingredient, second._ingredient)) {
                     newRecipe = item;
@@ -34,9 +35,19 @@ namespace Manager{
         
             return newRecipe;
         }
-        
-        public Recipe ActualRecipe() { return actualRecipe; }
-    
+
+        public void Clean() {
+            first.Clean();
+            second.Clean();
+            recipe.Clean();
+        }
+
+        public void AddRecipeToInventory() {
+            Managers.Inventory.RemoveIngredient(first._ingredient);
+            Managers.Inventory.RemoveIngredient(second._ingredient);
+            Managers.Inventory.AddRecipe(actualRecipe);
+            Clean();
+        }
     
         public ManagerStatus Status { get; set; }
         public void Startup() {
