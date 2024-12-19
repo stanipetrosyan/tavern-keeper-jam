@@ -1,10 +1,14 @@
 using System;
+using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace John {
     public class CustomerController : MonoBehaviour {
         public float moveSpeed = 5f;
         private Transform _target;
+        private Recipe _recipe;
+        [SerializeField] private Image recipeTexture;
         [SerializeField] private GameObject order;
 
 
@@ -25,7 +29,11 @@ namespace John {
         
         public void SetTarget(Transform target) {
             this._target = target;
-            
+        }
+
+        public void SetRecipe(Recipe recipe) {
+            this._recipe = recipe;
+            recipeTexture.sprite = recipe.icon;
         }
     }
 }

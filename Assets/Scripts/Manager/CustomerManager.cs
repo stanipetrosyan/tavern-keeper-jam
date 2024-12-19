@@ -3,6 +3,7 @@ using System.Collections;
 using John;
 using Port;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Manager{
     public class CustomerManager: MonoBehaviour, IGameManager{
@@ -20,11 +21,13 @@ namespace Manager{
 
         private IEnumerator SpawnCustomer() {
             while (true) {
+                var recipes = Managers.Shop.GetSellableRecipes();
                 yield return new WaitForSeconds(10f);
 
                 GameObject customer = Instantiate(customerPrefab, joinPoint);
                 customer.transform.SetParent(parent.transform);
                 customer.GetComponent<CustomerController>().SetTarget(targetPoint);      
+                customer.GetComponent<CustomerController>().SetRecipe(recipes[Random.Range(0, recipes.Length)]);      
             }
                  
         }
