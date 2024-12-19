@@ -10,6 +10,8 @@ namespace Manager{
         public static KitchenManager Kitchen { get; set; }
         public static TavernManager Tavern { get; set; }
         public static ShopManager Shop { get; set; }
+        
+        public static CustomerManager Customer { get; set; }
         private List<IGameManager> startSequence;
 
         void Awake() {
@@ -17,12 +19,14 @@ namespace Manager{
             Inventory = GetComponent<InventoryManager>();
             Kitchen = GetComponent<KitchenManager>();
             Shop = GetComponent<ShopManager>();
+            Customer = GetComponent<CustomerManager>();
 
             startSequence = new List<IGameManager> {
                 Tavern,
                 Inventory,
                 Kitchen,
-                Shop
+                Shop,
+                Customer
             };
 
             StartCoroutine(StartupManagers());
