@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using John;
 using Port;
@@ -9,8 +8,8 @@ namespace Manager{
     public class CustomerManager: MonoBehaviour, IGameManager{
 
         [SerializeField] private GameObject customerPrefab;
+        [SerializeField] private GameObject sheriffPrefab;
         [SerializeField] private Transform joinPoint;
-        [SerializeField] private Transform targetPoint;
         [SerializeField] private GameObject parent;
         
         public ManagerStatus Status { get; set; }
@@ -22,12 +21,20 @@ namespace Manager{
         private IEnumerator SpawnCustomer() {
             while (true) {
                 var recipes = Managers.Shop.GetSellableRecipes();
+                var chairs = Managers.Tavern.GetChairs();
+                var chair = chairs[Random.Range(0, chairs.Length)];
+                
                 yield return new WaitForSeconds(10f);
 
-                GameObject customer = Instantiate(customerPrefab, joinPoint);
-                customer.transform.SetParent(parent.transform);
-                customer.GetComponent<CustomerController>().SetTarget(targetPoint);      
-                customer.GetComponent<CustomerController>().SetRecipe(recipes[Random.Range(0, recipes.Length)]);      
+
+                if (Managers.Tavern.ChairIsFree(chair)) {
+                    GameObject customer = Instantiate(customerPrefab, joinPoint);
+                    customer.transform.SetParent(parent.transform);
+                
+                    customer.GetComponent<CustomerController>().SetTarget(chair);      
+                    customer.GetComponent<CustomerController>().SetRecipe(recipes[Random.Range(0, recipes.Length)]);
+                    Managers.Tavern.OccupyChair(chair);
+                }
             }
                  
         }
