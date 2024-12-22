@@ -1,8 +1,11 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Cards;
 using Manager;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI{
     public class KitchenPopup : UiPopup{
@@ -10,6 +13,8 @@ namespace UI{
         [SerializeField] GameObject inventoryCardPrefab;
         [SerializeField] GameObject inventory;
         private readonly List<GameObject> _objects = new();
+        [SerializeField] private ProgressBarUI progressBar;
+        [SerializeField] private GameObject generateButton;
         
         public override void Open() {
             gameObject.SetActive(true);
@@ -54,7 +59,21 @@ namespace UI{
 
        
         public void Generate() {
-            Managers.Kitchen.AddRecipeToInventory();
+            generateButton.SetActive(false);
+            StartCoroutine(Delay(() => {
+                Managers.Kitchen.AddRecipeToInventory();
+                generateButton.SetActive(true);
+                progressBar.Hide();
+            }));
+            
+           
+           
+        }
+
+        private IEnumerator Delay(Action task) {
+            progressBar.StartProgression(10);
+            yield return new WaitForSeconds(10);
+            task();
         }
 
         public void RevertInventory() {
