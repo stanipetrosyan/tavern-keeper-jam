@@ -8,7 +8,7 @@ namespace ScriptableObjects{
         public Sprite icon;
         public string recipeName;
         public int level;
-
+        public int cost;
 
         // TODO: Actually check the order too, but needed check just ingredients are correct
         public bool Valid(Ingredient first, Ingredient second) {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using Port;
 using ScriptableObjects;
 using UnityEngine;
@@ -42,9 +43,13 @@ namespace Manager{
             return recipes.ToArray();
         }
 
+        [CanBeNull]
         public Recipe GetRecipe(string name) {
-            return recipes.FirstOrDefault(recipe => recipe.name == name);
+            return recipes.First(recipe => recipe.name == name);
         }
 
+        public void RemoveRecipe(Recipe recipe) {
+            recipes.Remove(recipe);
+        }
     }
 }

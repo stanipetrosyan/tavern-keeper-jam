@@ -6734,6 +6734,10 @@ PrefabInstance:
       propertyPath: countersLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 5475319729459359164, guid: 54c3f6005b496a7269a2eeac9fb2cca8, type: 3}
+      propertyPath: interactLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 9168201263134077880, guid: 54c3f6005b496a7269a2eeac9fb2cca8, type: 3}
       propertyPath: m_Name
       value: Jack

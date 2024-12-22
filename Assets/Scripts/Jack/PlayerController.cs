@@ -1,3 +1,5 @@
+using John;
+using Manager;
 using UnityEngine;
 
 namespace Jack{
@@ -32,14 +34,17 @@ namespace Jack{
                 }
             }
 
-            var hit = Physics2D.CircleCast(movePoint.position, 0.3f, Vector2.up, 0.3f, interactLayer);
+            var hit = Physics2D.CircleCast(movePoint.position, 0.5f, Vector2.up, 0.5f, interactLayer);
             if (hit.collider != null) {
-                Debug.Log(hit.collider.gameObject.name);
-                // Chiedo la ricetta (potrebbe far appararire la cloud quando clicco E)
-                // controllo se la ho
-                // gliela consegno
-                // invia soldi per il valore della ricetta 
-                // si ha un tempo per dare la ricetta, se si sbaglia succederà qualcosa
+                if (Input.GetKeyDown(KeyCode.E)) {
+                    var customer = hit.collider.gameObject.GetComponent<CustomerController>();
+                    var order = customer.GetOrder();
+                    var recipe = Managers.Inventory.GetRecipe(order.name);
+                    if (customer.Interact(recipe)) {
+                        Managers.Tavern.AddMoney(recipe.cost);
+                        Managers.Inventory.RemoveRecipe(recipe);
+                    }
+                }
             }
         }
     }

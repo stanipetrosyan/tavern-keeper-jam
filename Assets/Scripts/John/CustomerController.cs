@@ -1,4 +1,5 @@
 using System;
+using Manager;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,8 @@ namespace John {
         public float moveSpeed = 5f;
         private Transform _target;
         private Recipe _recipe;
-        [SerializeField] private Image recipeTexture;
+        private bool served = false;
+        [SerializeField] private SpriteRenderer recipeTexture;
         [SerializeField] private GameObject order;
 
 
@@ -21,7 +23,7 @@ namespace John {
                 transform.position = Vector3.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
             }
 
-            if (transform.position == _target.position) {
+            if (transform.position == _target.position && !served) {
                 order.SetActive(true);
             }
 
@@ -34,6 +36,21 @@ namespace John {
         public void SetRecipe(Recipe recipe) {
             this._recipe = recipe;
             recipeTexture.sprite = recipe.icon;
+        }
+
+        public Recipe GetOrder() {
+            return _recipe;
+        }
+
+        public bool Interact(Recipe recipe) {
+            if (recipe == _recipe) {
+                served = true;
+                order.SetActive(false);
+                return true;
+            }
+            else {
+                return false;
+            }
         }
     }
 }

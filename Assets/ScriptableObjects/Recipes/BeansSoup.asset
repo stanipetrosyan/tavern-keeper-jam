@@ -17,3 +17,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 86394107f31d3fb668eaec36374b01da, type: 3}
   recipeName: Beans Soup
   level: 1
+  cost: 20
