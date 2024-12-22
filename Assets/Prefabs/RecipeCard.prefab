@@ -129,6 +129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 545393100849261978}
     m_Modifications:
+    - target: {fileID: 2622571079912429244, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc66491e6fc75bae0b79ac046723b428, type: 3}
     - target: {fileID: 6027398587982743072, guid: fc46fced2a866f24e8caa99839f03ee0, type: 3}
       propertyPath: m_Name
       value: Card
