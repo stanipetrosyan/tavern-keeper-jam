@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c46cc3223ce40bd8086bc8a5c6d03a4, type: 3}
   m_Name: Beer
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 10
   image: {fileID: 21300000, guid: d7330ca3a10806c5686fc72997b24530, type: 3}
-  level: 2
+  level: 1

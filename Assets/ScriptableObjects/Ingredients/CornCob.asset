@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c46cc3223ce40bd8086bc8a5c6d03a4, type: 3}
-  m_Name: Meat
+  m_Name: CornCob
   m_EditorClassIdentifier: 
-  cost: 20
-  image: {fileID: 21300000, guid: 815499d444f17d8ca895815ab10c5b7d, type: 3}
-  level: 4
+  cost: 15
+  image: {fileID: 21300000, guid: 14445697a6f2b4c189ce93a9bf00d711, type: 3}
+  level: 3

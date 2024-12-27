@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Port;
 using ScriptableObjects;
@@ -15,9 +16,15 @@ namespace Manager{
 
         public Ingredient[] GetSellableIngredients() {
             int tavernLevel = Managers.Tavern.GetTavernLevel();
+            Array.Sort(ingredients, Comparison);
             return ingredients.Where(i => i.level <= tavernLevel).ToArray();
+            
         }
-        
+
+        private int Comparison(Ingredient x, Ingredient y) {
+            return x.level.CompareTo(y.level);
+        }
+
         public Recipe[] GetSellableRecipes() {
             int tavernLevel = Managers.Tavern.GetTavernLevel();
             return recipes.Where(i => i.level <= tavernLevel).ToArray();

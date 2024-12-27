@@ -37,7 +37,7 @@ namespace UI{
 
 
         private void GenerateIngredientsShop() {
-            float x = -450;
+            float x = -650;
             float y = 0;
             
             var ingredients = Managers.Shop.GetSellableIngredients();
