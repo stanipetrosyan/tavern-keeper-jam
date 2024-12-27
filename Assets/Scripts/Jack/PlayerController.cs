@@ -2,6 +2,7 @@ using John;
 using Manager;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Jack{
     public class PlayerController : MonoBehaviour {
@@ -13,7 +14,7 @@ namespace Jack{
         [SerializeField] private LayerMask cookLayer;
         [SerializeField] private LayerMask beerLayer;
         [SerializeField] private KitchenPopup kitchenPopup;
-        [SerializeField] private KitchenPopup beerPopup;
+        [SerializeField] private StaplerPopup staplerPopup;
         [SerializeField] private float radius; 
         
         private Vector2 facingDirection;
@@ -76,7 +77,7 @@ namespace Jack{
             if (hitBeer.collider != null) {
                 if (Input.GetKeyDown(KeyCode.E)) { 
                     Debug.Log("Open Beerer"); 
-                    beerPopup.Open();
+                    staplerPopup.Open();
                 }
             }
         }

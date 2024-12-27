@@ -8,6 +8,7 @@ namespace John {
     public class CustomerController : MonoBehaviour {
         public float moveSpeed = 5f;
         private Transform _target;
+        private Transform _exit;
         private Recipe _recipe;
         private bool served = false;
         [SerializeField] private SpriteRenderer recipeTexture;
@@ -27,6 +28,18 @@ namespace John {
                 order.SetActive(true);
             }
 
+            if (transform.position == _target.position && served) {
+                transform.position = Vector3.MoveTowards(transform.position, _exit.position, moveSpeed * Time.deltaTime);
+            }
+
+            if (transform.position == _exit.position) {
+                Destroy(this.gameObject);
+            }
+
+        }
+
+        public void SetExit(Transform target) {
+            this._exit = target;
         }
         
         public void SetTarget(Transform target) {

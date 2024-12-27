@@ -6,10 +6,13 @@ public class UIController : MonoBehaviour {
     [SerializeField] ShopMenuPopup shopMenuPopup;
     [SerializeField] TavernStatsPopup tavernStatsPopup;
     [SerializeField] KitchenPopup kitchenPopup;
+    [SerializeField] StaplerPopup staplerPopup;
 
     void Start() {
         shopMenuPopup.Close();
         tavernStatsPopup.Close();
+        kitchenPopup.Close();
+        staplerPopup.Close();
     }
 
     public void OnOpenShopMenu() {

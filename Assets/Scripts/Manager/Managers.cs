@@ -8,6 +8,7 @@ namespace Manager{
     public class Managers : MonoBehaviour{
         public static InventoryManager Inventory { get; set; }
         public static KitchenManager Kitchen { get; set; }
+        public static StaplerManager Stapler { get; set; }
         public static TavernManager Tavern { get; set; }
         public static ShopManager Shop { get; set; }
         
@@ -20,13 +21,15 @@ namespace Manager{
             Kitchen = GetComponent<KitchenManager>();
             Shop = GetComponent<ShopManager>();
             Customer = GetComponent<CustomerManager>();
+            Stapler = GetComponent<StaplerManager>();
 
             startSequence = new List<IGameManager> {
                 Tavern,
                 Inventory,
                 Kitchen,
                 Shop,
-                Customer
+                Customer,
+                Stapler
             };
 
             StartCoroutine(StartupManagers());

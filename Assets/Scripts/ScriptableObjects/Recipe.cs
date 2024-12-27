@@ -1,3 +1,5 @@
+using System;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace ScriptableObjects{
@@ -10,8 +12,20 @@ namespace ScriptableObjects{
         public int level;
         public int cost;
         public int timeToCook;
-        public bool Valid(Ingredient first, Ingredient second) {
-            return (this.first == first && this.second == second) || (this.first == second && this.second == first);
+        public RecipeType recipeType;
+        public bool Valid(Ingredient first, [CanBeNull] Ingredient second) {
+            switch (this.recipeType) {
+                case RecipeType.Food:
+                    return (this.first == first && this.second == second) || (this.first == second && this.second == first);
+                case RecipeType.Drink:
+                    return (this.first == first);
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
+    }
+
+    public enum RecipeType{
+        Food, Drink
     }
 }

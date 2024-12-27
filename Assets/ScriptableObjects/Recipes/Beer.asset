@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5254de405f146829663139f4bd22f21, type: 3}
-  m_Name: BeansSoup
+  m_Name: Beer
   m_EditorClassIdentifier: 
-  first: {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
-  second: {fileID: 11400000, guid: 6c9c5e0ed7220ac5d8b7bc4acefa4490, type: 2}
-  icon: {fileID: 21300000, guid: 86394107f31d3fb668eaec36374b01da, type: 3}
-  recipeName: Beans Soup
+  first: {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
+  second: {fileID: 11400000, guid: 208e6517f507a4a7c92da92e4ae94040, type: 2}
+  icon: {fileID: 21300000, guid: d7330ca3a10806c5686fc72997b24530, type: 3}
+  recipeName: Beer
   level: 1
-  cost: 20
+  cost: 15
   timeToCook: 5
+  recipeType: 1
