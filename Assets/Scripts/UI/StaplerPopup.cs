@@ -5,7 +5,6 @@ using Cards;
 using Manager;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI{
     public class StaplerPopup : UiPopup{
@@ -61,8 +60,9 @@ namespace UI{
        
         public void Generate() {
             generateButton.SetActive(false);
+            //var recipeTime = Managers.Stapler.ActualRecipe();
             StartCoroutine(Delay(() => {
-                Managers.Kitchen.AddRecipeToInventory();
+                Managers.Stapler.AddRecipeToInventory();
                 generateButton.SetActive(true);
                 progressBar.Hide();
             }));
@@ -72,8 +72,8 @@ namespace UI{
         }
 
         private IEnumerator Delay(Action task) {
-            progressBar.StartProgression(10);
-            yield return new WaitForSeconds(10);
+            progressBar.StartProgression(5);
+            yield return new WaitForSeconds(5);
             task();
         }
 
@@ -84,7 +84,7 @@ namespace UI{
         }
 
         private void Clean() {
-            Managers.Kitchen.Clean();
+            Managers.Stapler.Clean();
         }
     }
 }

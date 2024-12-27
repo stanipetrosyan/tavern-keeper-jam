@@ -20,7 +20,7 @@ namespace John {
         }
 
         void Update() {
-            if (_target) {
+            if (_target  && !served) {
                 transform.position = Vector3.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
             }
 
@@ -28,7 +28,7 @@ namespace John {
                 order.SetActive(true);
             }
 
-            if (transform.position == _target.position && served) {
+            if (served) {
                 transform.position = Vector3.MoveTowards(transform.position, _exit.position, moveSpeed * Time.deltaTime);
             }
 
@@ -59,6 +59,7 @@ namespace John {
             if (recipe == _recipe) {
                 served = true;
                 order.SetActive(false);
+                Managers.Tavern.FreeChair(_target);
                 return true;
             }
             else {

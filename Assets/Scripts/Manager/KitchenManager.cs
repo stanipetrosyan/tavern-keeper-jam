@@ -41,6 +41,10 @@ namespace Manager{
             second.Clean();
             recipe.Clean();
         }
+        
+        public Recipe ActualRecipe() {
+            return actualRecipe;
+        }
 
         public void AddRecipeToInventory() {
             Managers.Inventory.RemoveIngredient(first._ingredient);

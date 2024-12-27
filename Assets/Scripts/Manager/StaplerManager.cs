@@ -35,7 +35,7 @@ namespace Manager{
             return newRecipe;
         }
 
-        private void Clean() {
+        public void Clean() {
             first.Clean();
             recipe.Clean();
         }
@@ -44,6 +44,10 @@ namespace Manager{
             Managers.Inventory.RemoveIngredient(first._ingredient);
             Managers.Inventory.AddRecipe(actualRecipe);
             Clean();
+        }
+
+        public Recipe ActualRecipe() {
+            return actualRecipe;
         }
         
         public ManagerStatus Status { get; set; }
