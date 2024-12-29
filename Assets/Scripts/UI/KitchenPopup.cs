@@ -15,6 +15,7 @@ namespace UI{
         private readonly List<GameObject> _objects = new();
         [SerializeField] private ProgressBarUI progressBar;
         [SerializeField] private GameObject generateButton;
+        [SerializeField] private GameObject exitButton;
         
         public override void Open() {
             gameObject.SetActive(true);
@@ -65,12 +66,14 @@ namespace UI{
             StartCoroutine(Delay(recipeTime, () => {
                 Managers.Kitchen.AddRecipeToInventory();
                 generateButton.SetActive(true);
+                exitButton.SetActive(true);
                 progressBar.Hide();
             }));
             
         }
 
         private IEnumerator Delay(int time, Action task) {
+            exitButton.SetActive(false);
             progressBar.StartProgression(time);
             yield return new WaitForSeconds(time);
             task();

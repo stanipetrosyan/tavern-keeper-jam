@@ -716,6 +716,7 @@ MonoBehaviour:
   inventory: {fileID: 1755752232}
   progressBar: {fileID: 2130658129}
   generateButton: {fileID: 1719463157}
+  exitButton: {fileID: 2089110258}
 --- !u!1 &252506739
 GameObject:
   m_ObjectHideFlags: 0
@@ -5387,6 +5388,7 @@ MonoBehaviour:
   inventory: {fileID: 751279760}
   progressBar: {fileID: 798927159}
   generateButton: {fileID: 1845836992}
+  exitButton: {fileID: 1793089056}
 --- !u!1 &999693571
 GameObject:
   m_ObjectHideFlags: 0
@@ -7676,6 +7678,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7969634010980675950, guid: e9ee330ceaae49041b7a1459b4f7c728, type: 3}
   m_PrefabInstance: {fileID: 1772578824}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1793089056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4399877822335551546, guid: e491577ecd8a8cf6f94eeef4ca05c29e, type: 3}
+  m_PrefabInstance: {fileID: 1718783708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813595202
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,6 +8235,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &2089110258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4399877822335551546, guid: e491577ecd8a8cf6f94eeef4ca05c29e, type: 3}
+  m_PrefabInstance: {fileID: 576026384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096997399
 GameObject:
   m_ObjectHideFlags: 0
