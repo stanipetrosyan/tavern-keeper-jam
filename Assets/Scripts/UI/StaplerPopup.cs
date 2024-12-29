@@ -14,7 +14,7 @@ namespace UI{
         private readonly List<GameObject> _objects = new();
         [SerializeField] private ProgressBarUI progressBar;
         [SerializeField] private GameObject generateButton;
-        
+
         public override void Open() {
             gameObject.SetActive(true);
         }
@@ -22,7 +22,7 @@ namespace UI{
         public override void Close() {
             gameObject.SetActive(false);
         }
-        
+
         private void OnEnable() {
             GenerateInventory();
         }
@@ -48,16 +48,16 @@ namespace UI{
             foreach (var item in _ingredients) {
                 var ingredientCard = Instantiate(inventoryCardPrefab, inventory.transform, false);
                 _objects.Add(ingredientCard.gameObject);
-                
+
                 ingredientCard.GetComponent<InventoryCard>().SetIngredient(item);
                 ingredientCard.transform.localScale = new Vector3(1, 1, 1);
                 ingredientCard.transform.localPosition = new Vector3(x, y, 0);
-                
+
                 x += 200;
             }
         }
 
-       
+
         public void Generate() {
             generateButton.SetActive(false);
             var recipeTime = Managers.Stapler.ActualRecipe().timeToCook;
@@ -66,9 +66,6 @@ namespace UI{
                 generateButton.SetActive(true);
                 progressBar.Hide();
             }));
-            
-           
-           
         }
 
         private IEnumerator Delay(int time, Action task) {

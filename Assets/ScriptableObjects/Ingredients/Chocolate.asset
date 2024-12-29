@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c46cc3223ce40bd8086bc8a5c6d03a4, type: 3}
-  m_Name: CornCob
+  m_Name: Chocolate
   m_EditorClassIdentifier: 
-  cost: 15
-  image: {fileID: 21300000, guid: 14445697a6f2b4c189ce93a9bf00d711, type: 3}
-  level: 2
+  cost: 20
+  image: {fileID: 21300000, guid: 3eba06212b9c9993e991fd13d8dcfbc9, type: 3}
+  level: 3

@@ -4762,10 +4762,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
   - {fileID: 11400000, guid: 17b23e3d569de239ab4719b872ce668b, type: 2}
   - {fileID: 11400000, guid: b2a9743af721904e09085c4dab1b1b3e, type: 2}
+  - {fileID: 11400000, guid: 55b2b7ef6a5f2abc99cc28275088e3fe, type: 2}
   recipes:
   - {fileID: 11400000, guid: 89f2662a15ab44a878768e57b858353f, type: 2}
   - {fileID: 11400000, guid: 9caadb1edbf5957089f83fa40c404a4c, type: 2}
   - {fileID: 11400000, guid: 784bc62250e62687e82586142e0e1fd7, type: 2}
+  - {fileID: 11400000, guid: bbd0699bb4e8715149f4227ee3355f8b, type: 2}
 --- !u!114 &779392795
 MonoBehaviour:
   m_ObjectHideFlags: 0
