@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5254de405f146829663139f4bd22f21, type: 3}
-  m_Name: Cake
+  m_Name: BreadMais
   m_EditorClassIdentifier: 
-  first: {fileID: 11400000, guid: 009c1323c5c97526588a77b821a9c62a, type: 2}
-  second: {fileID: 11400000, guid: 55b2b7ef6a5f2abc99cc28275088e3fe, type: 2}
-  icon: {fileID: 21300000, guid: 78e21d0d42ffe73fe95d034e61c127d5, type: 3}
-  recipeName: Cake
-  level: 3
-  cost: 20
-  timeToCook: 8
+  first: {fileID: 11400000, guid: a27fc694bfd4cbd6a967b2a16d4beb3e, type: 2}
+  second: {fileID: 11400000, guid: 034d5cae3b9e7988bb989238f9c4eada, type: 2}
+  icon: {fileID: 21300000, guid: 88203505d00be59a290758e02352530b, type: 3}
+  recipeName: Mais Bread
+  level: 2
+  cost: 30
+  timeToCook: 2
   recipeType: 0

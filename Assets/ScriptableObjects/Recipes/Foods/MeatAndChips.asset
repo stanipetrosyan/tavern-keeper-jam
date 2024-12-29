@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5254de405f146829663139f4bd22f21, type: 3}
-  m_Name: BeansSoup
+  m_Name: MeatAndChips
   m_EditorClassIdentifier: 
-  first: {fileID: 11400000, guid: 69646a07db1340f9ea0bb1c007a767b1, type: 2}
-  second: {fileID: 11400000, guid: 6c9c5e0ed7220ac5d8b7bc4acefa4490, type: 2}
-  icon: {fileID: 21300000, guid: 86394107f31d3fb668eaec36374b01da, type: 3}
-  recipeName: Beans Soup
-  level: 1
-  cost: 20
-  timeToCook: 3
+  first: {fileID: 11400000, guid: b2a9743af721904e09085c4dab1b1b3e, type: 2}
+  second: {fileID: 11400000, guid: 85c85e9889ddba4af9f6488d44ccd047, type: 2}
+  icon: {fileID: 21300000, guid: e762f3cc1847575db882b0be0466dea0, type: 3}
+  recipeName: MeatAndChips
+  level: 4
+  cost: 50
+  timeToCook: 4
   recipeType: 0

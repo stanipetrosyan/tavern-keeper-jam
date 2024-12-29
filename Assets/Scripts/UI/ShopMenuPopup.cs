@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cards;
@@ -8,7 +9,7 @@ using UnityEngine;
 namespace UI{
     public class ShopMenuPopup : UiPopup {
         [SerializeField] private GameObject ingredientCardPrefab;
-        private readonly List<GameObject> _objects = new();
+        private readonly List<GameObject> objects = new();
         
         
         public override void Open() {
@@ -28,29 +29,41 @@ namespace UI{
         }
         
         private void CleanInventory() {
-            foreach (var item in _objects) {
+            foreach (var item in objects) {
                 Destroy(item);
             }
 
-            _objects.Clear();
+            objects.Clear();
         }
 
 
         private void GenerateIngredientsShop() {
-            float x = -650;
-            float y = 0;
+            float xFood = -700;
+            float xDrink = -700;
+            const float yFood = 200;
+            const float yDrink = -200;
             
             var ingredients = Managers.Shop.GetSellableIngredients();
         
             foreach (var item in ingredients) {
                 var ingredientCard = Instantiate(ingredientCardPrefab, transform, false);
-                _objects.Add(ingredientCard.gameObject);
+                objects.Add(ingredientCard.gameObject);
                 
                 ingredientCard.GetComponent<IngredientCard>().SetIngredient(item);
                 ingredientCard.transform.localScale = new Vector3(1, 1, 1);
-                ingredientCard.transform.localPosition = new Vector3(x, y, 0);
-            
-                x += 200;
+                switch (item.type) {
+                    case IngredientType.Food:
+                        ingredientCard.transform.localPosition = new Vector3(xFood, yFood, 0);
+                        xFood += 200;
+                        break;
+                    case IngredientType.Drink:
+                        ingredientCard.transform.localPosition = new Vector3(xDrink, yDrink, 0);
+                        xDrink += 200;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
             }
         }
 

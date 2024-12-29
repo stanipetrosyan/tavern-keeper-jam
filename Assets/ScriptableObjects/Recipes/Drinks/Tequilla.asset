@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5254de405f146829663139f4bd22f21, type: 3}
-  m_Name: Beer
+  m_Name: Tequilla
   m_EditorClassIdentifier: 
-  first: {fileID: 11400000, guid: c9559ab8a81326dab81a105b9b704eb0, type: 2}
+  first: {fileID: 11400000, guid: a247ca808cbb2c39ebaa24d7fd68c9c4, type: 2}
   second: {fileID: 11400000, guid: 208e6517f507a4a7c92da92e4ae94040, type: 2}
-  icon: {fileID: 21300000, guid: d7330ca3a10806c5686fc72997b24530, type: 3}
-  recipeName: Beer
-  level: 1
-  cost: 15
+  icon: {fileID: 21300000, guid: 68e8552822258ede7959c862a292d763, type: 3}
+  recipeName: Tequilla
+  level: 2
+  cost: 25
   timeToCook: 2
   recipeType: 1
