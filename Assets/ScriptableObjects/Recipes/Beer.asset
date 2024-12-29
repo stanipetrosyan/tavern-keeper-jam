@@ -18,5 +18,5 @@ MonoBehaviour:
   recipeName: Beer
   level: 1
   cost: 15
-  timeToCook: 5
+  timeToCook: 2
   recipeType: 1

@@ -60,8 +60,8 @@ namespace UI{
        
         public void Generate() {
             generateButton.SetActive(false);
-            //var recipeTime = Managers.Stapler.ActualRecipe();
-            StartCoroutine(Delay(() => {
+            var recipeTime = Managers.Stapler.ActualRecipe().timeToCook;
+            StartCoroutine(Delay(recipeTime, () => {
                 Managers.Stapler.AddRecipeToInventory();
                 generateButton.SetActive(true);
                 progressBar.Hide();
@@ -71,9 +71,9 @@ namespace UI{
            
         }
 
-        private IEnumerator Delay(Action task) {
-            progressBar.StartProgression(5);
-            yield return new WaitForSeconds(5);
+        private IEnumerator Delay(int time, Action task) {
+            progressBar.StartProgression(time);
+            yield return new WaitForSeconds(time);
             task();
         }
 
