@@ -212,6 +212,7 @@ MonoBehaviour:
   inventoryCardPrefab: {fileID: 6027398587982743072, guid: ab1ce8371ada2f90d933f721dbcf4698, type: 3}
   recipesInventory: {fileID: 1963941456}
   ingredientsInventory: {fileID: 379571295}
+  levelUpButton: {fileID: 985169620}
   coins: {fileID: 1529800853}
   level: {fileID: 999693573}
   levelUpCost: {fileID: 1794020526}
@@ -4963,7 +4964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  money: 1000
+  money: 30
   chairsParent: {fileID: 0}
   chairs:
   - {fileID: 1813595203}
@@ -5130,6 +5131,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1589269212}
   - {fileID: 2096997400}
   - {fileID: 115588950}
   - {fileID: 1563137590}
@@ -5140,7 +5142,6 @@ RectTransform:
   - {fileID: 1454612206}
   - {fileID: 2062984415}
   - {fileID: 1436750401}
-  - {fileID: 1589269212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5489,6 +5490,11 @@ MonoBehaviour:
   progressBar: {fileID: 798927159}
   generateButton: {fileID: 1845836992}
   exitButton: {fileID: 1793089056}
+--- !u!1 &985169620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7969634010980675951, guid: e9ee330ceaae49041b7a1459b4f7c728, type: 3}
+  m_PrefabInstance: {fileID: 1710846563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999693571
 GameObject:
   m_ObjectHideFlags: 0
@@ -6898,7 +6904,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589269211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7671,7 +7677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969634010980675951, guid: e9ee330ceaae49041b7a1459b4f7c728, type: 3}
       propertyPath: m_Name
-      value: LevelUpTaverButton
+      value: LevelUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
