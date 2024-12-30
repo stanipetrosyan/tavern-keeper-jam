@@ -24,9 +24,14 @@ namespace Manager{
         private int Comparison(Ingredient x, Ingredient y) {
             return x.level.CompareTo(y.level);
         }
+        
+        private int Comparison(Recipe x, Recipe y) {
+            return x.level.CompareTo(y.level);
+        }
 
         public Recipe[] GetSellableRecipes() {
             int tavernLevel = Managers.Tavern.GetTavernLevel();
+            Array.Sort(recipes, Comparison);
             return recipes.Where(i => i.level <= tavernLevel).ToArray();
         }
 
