@@ -15,9 +15,11 @@ namespace UI{
         [SerializeField] GameObject inventoryCardPrefab;
         [SerializeField] GameObject recipesInventory;
         [SerializeField] GameObject ingredientsInventory;
+        [SerializeField] GameObject levelUpButton;
         private List<GameObject> _objects;
         [SerializeField] private TMP_Text coins;
         [SerializeField] private TMP_Text level;
+        [SerializeField] private TMP_Text levelUpCost;
         
         public override void Open() {
             gameObject.SetActive(true);
@@ -31,6 +33,13 @@ namespace UI{
             Managers.Tavern.LevelUpTavern();
             coins.text = Managers.Tavern.GetMoney().ToString();
             level.text = Managers.Tavern.GetTavernLevel().ToString();
+            if (Managers.Tavern.GetTavernLevel() == 4) {
+                levelUpCost.enabled = false;
+                levelUpButton.SetActive(false);
+            }
+            else {
+                levelUpCost.text = $"Cost: ${Managers.Tavern.GetLevelUpCost().ToString()}";
+            }
         }
         
         
@@ -38,6 +47,7 @@ namespace UI{
             _objects = new List<GameObject>();
             coins.text = Managers.Tavern.GetMoney().ToString();
             level.text = Managers.Tavern.GetTavernLevel().ToString();
+            levelUpCost.text = $"Cost: ${Managers.Tavern.GetLevelUpCost().ToString()}";
             
             
             GenerateRecipesInventory();

@@ -19,7 +19,9 @@ namespace Manager{
         }
 
         public void LevelUpTavern() {
-            level++;
+            if (RemoveMoney(GetLevelUpCost())) {
+                level++;
+            }
         }
 
         public int GetTavernLevel() {
@@ -40,6 +42,15 @@ namespace Manager{
 
         public int GetMoney() {
             return money;
+        }
+
+        public int GetLevelUpCost() {
+            switch (level) {
+                case 1 : return 100;
+                case 2 : return 200;
+                case 3 : return 300;
+                default: return 0;
+            }
         }
 
         public Transform[] GetChairs() {
